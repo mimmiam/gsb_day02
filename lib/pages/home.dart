@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsb_day2/pages/Info.dart';
+import 'package:gsb_day2/pages/fetch.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,15 +13,14 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List<Widget> pages = [
     InfoScreen(),
-    Center(
-      child: Text('Fetch data'),
-    )
+    FetchScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightGreen,
         title: Text('Day2'),
       ),
       drawer: Drawer(
