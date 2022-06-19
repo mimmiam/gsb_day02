@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsb_day2/pages/home.dart';
+import 'package:gsb_day2/pages/editInfo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        '/editinfo': ((context) => EditInfoScreen()),
+      },
       home: HomeScreen(),
     );
   }
