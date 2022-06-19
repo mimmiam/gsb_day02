@@ -33,10 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: NetworkImage(
-                        'https://cdn.britannica.com/49/161649-050-3F458ECF/Bernese-mountain-dog-grass.jpg?q=60'),
+                        'https://i.natgeofe.com/n/3861de2a-04e6-45fd-aec8-02e7809f9d4e/02-cat-training-NationalGeographic_1484324_3x4.jpg'),
                   ),
                   Text(
-                    'Bobby',
+                    'MeowMeow',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   )
                 ],
