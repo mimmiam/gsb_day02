@@ -21,6 +21,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
     info = ModalRoute.of(context)!.settings.arguments as Info;
     return Scaffold(
       appBar: AppBar(
+        // backgroundColor: Colors.lightGreen,
         title: Text('Edit Info'),
       ),
       body: Container(
@@ -49,7 +50,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                   },
                   validator: _validateString,
                   decoration: InputDecoration(
-                      labelText: 'Position'
+                      labelText: 'Position',
                   ),
                 ),
               ),
@@ -62,11 +63,23 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                   onPressed: () {
                     _selectDate();
                   },
+                  style: TextButton.styleFrom(
+                    primary: Theme.of(context).secondaryHeaderColor,
+                  ),
                 ),
               ),
               ListTile(
                   title: ElevatedButton(
-                    child: Text('Submit'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Theme.of(context).primaryColor,
+
+                    ),
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                        color: Colors.white
+                      )
+                    ),
                     onPressed: _submit,
                   )
               )

@@ -20,14 +20,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightGreen,
-        title: Text('Day2'),
+        // backgroundColor: Colors.lightGreen,
+        title: Text('GSB Day 2'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(color: Colors.lightGreen),
               child: Column(
                 children: [
                   CircleAvatar(

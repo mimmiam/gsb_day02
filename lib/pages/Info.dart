@@ -36,7 +36,16 @@ class _InfoScreenState extends State<InfoScreen> {
                       Navigator.pushNamed(context, '/editinfo',
                           arguments: info).then((value) => setState(() {}));
                     },
-                    child: Icon(Icons.edit)
+                    child: Icon(
+                        Icons.edit,
+                        color: Colors.white
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      primary: Theme.of(context).primaryColor,
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(24),
+
+                    ),
                 )
               ],
             ),

@@ -15,6 +15,12 @@ class MyApp extends StatelessWidget {
       routes: {
         '/editinfo': ((context) => EditInfoScreen()),
       },
+      title: 'GSB Day 2',
+      theme: ThemeData(
+        primaryColor: Colors.lightGreen,
+        primarySwatch: Colors.lightGreen,
+        secondaryHeaderColor: Colors.orange
+      ),
       home: HomeScreen(),
     );
   }
