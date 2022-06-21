@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsb_day2/models/info.dart';
-import 'package:gsb_day2/utills/local_date.dart';
+import 'package:gsb_day2/utils/local_date.dart';
 import 'package:intl/intl.dart';
 
 
@@ -12,7 +12,7 @@ class EditInfoScreen extends StatefulWidget {
 }
 
 class _EditInfoScreenState extends State<EditInfoScreen> {
-  var _keyform = GlobalKey<FormState>();
+  final _keyform = GlobalKey<FormState>();
   Info info = Info();
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.lightGreen,
-        title: const Text('Edit Info'),
+        title: Text('Edit Info'),
       ),
       body: Container(
-        margin: const EdgeInsets.all(8),
+        margin: EdgeInsets.all(8),
         child: Form(
           key: _keyform,
           child: Column(
@@ -35,7 +35,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                     info.name = value!;
                   },
                   validator: _validateString,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Name'
                   ),
                 ),
@@ -47,7 +47,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                     info.position = value!;
                   },
                   validator: _validateString,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                       labelText: 'Position',
                   ),
                 ),
@@ -59,13 +59,13 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                     info.email = value!;
                   },
                   validator: _validateString,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Email',
                   ),
                 ),
               ),
               ListTile(
-                leading: const Text('birthdate'),
+                leading: Text('birthdate'),
                 title: TextButton(
                   onPressed: () {
                     _selectDate();
@@ -85,7 +85,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
 
                     ),
                     onPressed: _submit,
-                    child: const Text(
+                    child: Text(
                       'Submit',
                       style: TextStyle(
                         color: Colors.white

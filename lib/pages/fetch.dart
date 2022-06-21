@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gsb_day2/services/FeedAPI.dart';
+import 'package:gsb_day2/services/feed_api.dart';
 
 import '../models/feeds.dart';
 
@@ -24,7 +24,7 @@ class _FetchScreenState extends State<FetchScreen> {
               itemBuilder: (BuildContext context, int i) {
                 Feed feed = feeds[i];
                 return ListTile(
-                  leading: const Icon(Icons.ac_unit),
+                  leading: Icon(Icons.ac_unit),
                   title: Text(feed.title),
                   subtitle: Text(feed.body),
                   trailing: Text(feed.userId.toString()),
@@ -32,7 +32,7 @@ class _FetchScreenState extends State<FetchScreen> {
               },
             );
           }
-          return const Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator());
         },
       ),
     );

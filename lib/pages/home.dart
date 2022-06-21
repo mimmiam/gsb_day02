@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gsb_day2/pages/Info.dart';
+import 'package:gsb_day2/pages/info.dart';
 import 'package:gsb_day2/pages/fetch.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,8 +12,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List<Widget> pages = [
-    const InfoScreen(),
-    const FetchScreen(),
+    InfoScreen(),
+    FetchScreen(),
   ];
 
   @override
@@ -21,13 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.lightGreen,
-        title: const Text('Demo'),
+        title: Text('Demo'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: const BoxDecoration(color: Colors.lightGreen),
+              decoration: BoxDecoration(color: Colors.lightGreen),
               child: Column(
                 children: const [
                   CircleAvatar(
@@ -43,13 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Info'),
+              leading: Icon(Icons.person),
+              title: Text('Info'),
               onTap: () => _selectedIndex(0),
             ),
             ListTile(
-              leading: const Icon(Icons.data_array),
-              title: const Text('Fetch data'),
+              leading: Icon(Icons.data_array),
+              title: Text('Fetch data'),
               onTap: () => _selectedIndex(1),
             )
           ],

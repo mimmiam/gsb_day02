@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsb_day2/models/info.dart';
-import 'package:gsb_day2/utills/local_date.dart';
+import 'package:gsb_day2/utils/local_date.dart';
 
 class InfoScreen extends StatefulWidget {
   const InfoScreen({Key? key}) : super(key: key);
@@ -62,7 +62,7 @@ class _InfoScreenState extends State<InfoScreen> {
                 const SizedBox(height: 20,),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/editinfo',
+                      Navigator.pushNamed(context, '/edit_info',
                           arguments: info).then((value) => setState(() {}));
                     },
                     style: ElevatedButton.styleFrom(
