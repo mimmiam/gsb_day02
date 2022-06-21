@@ -24,7 +24,7 @@ class _FetchScreenState extends State<FetchScreen> {
               itemBuilder: (BuildContext context, int i) {
                 Feed feed = feeds[i];
                 return ListTile(
-                  leading: Icon(Icons.ac_unit),
+                  leading: const Icon(Icons.ac_unit),
                   title: Text(feed.title),
                   subtitle: Text(feed.body),
                   trailing: Text(feed.userId.toString()),
@@ -32,7 +32,7 @@ class _FetchScreenState extends State<FetchScreen> {
               },
             );
           }
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );

@@ -12,8 +12,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   List<Widget> pages = [
-    InfoScreen(),
-    FetchScreen(),
+    const InfoScreen(),
+    const FetchScreen(),
   ];
 
   @override
@@ -21,15 +21,15 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.lightGreen,
-        title: Text('GSB Day 2'),
+        title: const Text('Demo'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.lightGreen),
+              decoration: const BoxDecoration(color: Colors.lightGreen),
               child: Column(
-                children: [
+                children: const [
                   CircleAvatar(
                     radius: 50,
                     backgroundImage: NetworkImage(
@@ -43,13 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Info'),
+              leading: const Icon(Icons.person),
+              title: const Text('Info'),
               onTap: () => _selectedIndex(0),
             ),
             ListTile(
-              leading: Icon(Icons.data_array),
-              title: Text('Fetch data'),
+              leading: const Icon(Icons.data_array),
+              title: const Text('Fetch data'),
               onTap: () => _selectedIndex(1),
             )
           ],

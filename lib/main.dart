@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/editinfo': ((context) => EditInfoScreen()),
+        '/editinfo': ((context) => const EditInfoScreen()),
       },
       title: 'GSB Day 2',
       theme: ThemeData(
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.lightGreen,
         secondaryHeaderColor: Colors.orange
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

@@ -1,8 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:gsb_day2/models/info.dart';
-import 'package:gsb_day2/utills/localDate.dart';
+import 'package:gsb_day2/utills/local_date.dart';
 import 'package:intl/intl.dart';
 
 
@@ -22,10 +20,10 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.lightGreen,
-        title: Text('Edit Info'),
+        title: const Text('Edit Info'),
       ),
       body: Container(
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         child: Form(
           key: _keyform,
           child: Column(
@@ -37,7 +35,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                     info.name = value!;
                   },
                   validator: _validateString,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Name'
                   ),
                 ),
@@ -49,22 +47,34 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                     info.position = value!;
                   },
                   validator: _validateString,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Position',
                   ),
                 ),
               ),
               ListTile(
-                leading: Text('birthdate'),
-                title: TextButton(
-                  child: Text(
-                    info.birthdate == '' ? 'choose date' : info.birthdate,
+                title: TextFormField(
+                  initialValue: info.email,
+                  onSaved: (String ? value){
+                    info.email = value!;
+                  },
+                  validator: _validateString,
+                  decoration: const InputDecoration(
+                    labelText: 'Email',
                   ),
+                ),
+              ),
+              ListTile(
+                leading: const Text('birthdate'),
+                title: TextButton(
                   onPressed: () {
                     _selectDate();
                   },
                   style: TextButton.styleFrom(
                     primary: Theme.of(context).secondaryHeaderColor,
+                  ),
+                  child: Text(
+                    info.birthdate == '' ? 'choose date' : info.birthdate,
                   ),
                 ),
               ),
@@ -74,13 +84,13 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
                       primary: Theme.of(context).primaryColor,
 
                     ),
-                    child: Text(
+                    onPressed: _submit,
+                    child: const Text(
                       'Submit',
                       style: TextStyle(
                         color: Colors.white
                       )
                     ),
-                    onPressed: _submit,
                   )
               )
             ],
@@ -111,6 +121,7 @@ class _EditInfoScreenState extends State<EditInfoScreen> {
     bool isSave = await localData.setString(key: 'name', value: info.name);
     isSave = await localData.setString(key: 'position', value: info.position);
     isSave = await localData.setString(key: 'birthdate', value: info.birthdate);
+    isSave = await localData.setString(key: 'email', value: info.email);
     return isSave;
   }
   _selectDate() async {
